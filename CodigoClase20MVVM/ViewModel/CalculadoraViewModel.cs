@@ -57,6 +57,17 @@ namespace CodigoClase20MVVM.ViewModel
             }
         }
 
+        private int _ResultadoProducto;
+        public int ResultadoProducto
+        {
+            get { return _ResultadoProducto; }
+            set
+            {
+                _ResultadoProducto = value;
+                OnPropertyChanged(nameof(ResultadoProducto));
+            }
+        }
+
         #endregion
 
         #region Comandos
@@ -64,6 +75,7 @@ namespace CodigoClase20MVVM.ViewModel
         //public RelayCommand<string> SumarCommand { get; }
         public RelayCommand SumarCommand { get; }
         public RelayCommand RestarCommand { get; }
+        public RelayCommand MultiplicarCommand { get; }
 
 
 
@@ -72,6 +84,7 @@ namespace CodigoClase20MVVM.ViewModel
 
         public CalculadoraViewModel()
         {
+            MultiplicarCommand = new RelayCommand(Multiplicar);
             //SumarCommand = new RelayCommand(Sumar);
             SumarCommand = new RelayCommand(Sumar);
             //SumarCommand = new RelayCommand<string>((s) => Sumar(s));
@@ -88,6 +101,11 @@ namespace CodigoClase20MVVM.ViewModel
         public void Restar()
         {
             ResultadoResta =  Convert.ToInt32( Valor1) -  Convert.ToInt32( Valor2);
+        }
+
+        public void Multiplicar()
+        {
+            ResultadoProducto = Convert.ToInt32(Valor1) * Convert.ToInt32(Valor2);
         }
         #endregion
 
