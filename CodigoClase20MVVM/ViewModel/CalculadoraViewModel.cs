@@ -45,24 +45,49 @@ namespace CodigoClase20MVVM.ViewModel
                 OnPropertyChanged(nameof(Resultado));
             }
         }
+
+        private int _ResultadoResta;
+        public int ResultadoResta
+        {
+            get { return _ResultadoResta; }
+            set
+            {
+                _ResultadoResta = value;
+                OnPropertyChanged(nameof(ResultadoResta));
+            }
+        }
+
         #endregion
 
         #region Comandos
 
+        //public RelayCommand<string> SumarCommand { get; }
         public RelayCommand SumarCommand { get; }
+        public RelayCommand RestarCommand { get; }
+
+
 
         #endregion
 
-       
+
         public CalculadoraViewModel()
         {
+            //SumarCommand = new RelayCommand(Sumar);
             SumarCommand = new RelayCommand(Sumar);
-        }
+            //SumarCommand = new RelayCommand<string>((s) => Sumar(s));
+            RestarCommand = new RelayCommand(Restar);
+
+        }    
 
         #region Métodos Privados
         public void Sumar()
         {           
             Resultado = Valor1 + Valor2;
+        }
+
+        public void Restar()
+        {
+            ResultadoResta =  Convert.ToInt32( Valor1) -  Convert.ToInt32( Valor2);
         }
         #endregion
 

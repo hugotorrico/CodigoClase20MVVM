@@ -10,8 +10,12 @@
     <StackPanel Margin="10">
         <TextBox Margin="0 0 0 5" Text="{Binding Valor1}"  /> 
         <TextBox  Margin="0 0 0 5" Text="{Binding Valor2}"/>
-        <Button Content="Sumar" Command="{Binding SumarCommand}" />
+        <Button Content="Sumar" Command="{Binding SumarCommand}"/>
         <TextBlock Text="{Binding Resultado}"/>
+        <Button Content="Restar" Command="{Binding RestarCommand}"/>
+        <TextBlock Text="{Binding ResultadoResta}"/>
+
+
     </StackPanel>
    
 </Window>
