@@ -68,15 +68,30 @@ namespace CodigoClase20MVVM.ViewModel
             }
         }
 
+        private double _ResultadoPotencia;
+        public double ResultadoPotencia
+        {
+            get { return _ResultadoPotencia; }
+            set
+            {
+                _ResultadoPotencia = value;
+                OnPropertyChanged(nameof(ResultadoPotencia));
+            }
+        }
+
+
         #endregion
 
         #region Comandos
 
+       
         //public RelayCommand<string> SumarCommand { get; }
         public RelayCommand SumarCommand { get; }
         public RelayCommand RestarCommand { get; }
         public RelayCommand MultiplicarCommand { get; }
 
+        //Comando recibiendo un parámetro
+        public RelayCommand<string> ElevarCommand { get; }
 
 
         #endregion
@@ -84,15 +99,26 @@ namespace CodigoClase20MVVM.ViewModel
 
         public CalculadoraViewModel()
         {
+
             MultiplicarCommand = new RelayCommand(Multiplicar);
             //SumarCommand = new RelayCommand(Sumar);
             SumarCommand = new RelayCommand(Sumar);
             //SumarCommand = new RelayCommand<string>((s) => Sumar(s));
             RestarCommand = new RelayCommand(Restar);
 
-        }    
+            ElevarCommand = new RelayCommand<string>((s) => Elevar(s));
+
+        }
 
         #region Métodos Privados
+
+        public void Elevar(string potencia)
+        {
+            ResultadoPotencia = Math.Pow(Valor1, Convert.ToInt32( potencia));
+        }
+
+
+
         public void Sumar()
         {           
             Resultado = Valor1 + Valor2;
@@ -107,6 +133,9 @@ namespace CodigoClase20MVVM.ViewModel
         {
             ResultadoProducto = Convert.ToInt32(Valor1) * Convert.ToInt32(Valor2);
         }
+       
+
+
         #endregion
 
     }

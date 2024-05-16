@@ -16,8 +16,19 @@
         <TextBlock Text="{Binding ResultadoResta}"/>
         <Button Content="Multiplicar" Command="{Binding MultiplicarCommand}"/>
         <TextBlock Text="{Binding ResultadoProducto}"/>
+        <Button Content="Elevar Cuadrado" 
+                Command="{Binding ElevarCommand}"
+                CommandParameter="2"                
+                />
+        <Button Content="Elevar Al Cubo" 
+                Command="{Binding ElevarCommand}"
+                CommandParameter="3"/>
 
+        <Button Content="Elevar A la Cuarta" 
+        Command="{Binding ElevarCommand}"
+        CommandParameter="3"/>
 
+        <TextBlock Text="{Binding ResultadoPotencia}"/>
     </StackPanel>
    
 </Window>
