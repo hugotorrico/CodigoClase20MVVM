@@ -20,6 +20,8 @@ namespace CodigoClase20MVVM.View
     /// </summary>
     public partial class Calculadora : Window
     {
+
+        //Hugo Torrico
         public Calculadora()
         {
             InitializeComponent();
