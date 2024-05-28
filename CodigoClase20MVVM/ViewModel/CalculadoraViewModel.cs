@@ -110,6 +110,10 @@ namespace CodigoClase20MVVM.ViewModel
 
         }
 
+        public void jessica()
+        {
+        }
+
         #region Métodos Privados
 
         public void Elevar(string potencia)
