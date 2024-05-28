@@ -29,5 +29,11 @@ namespace CodigoClase20MVVM.View
             InitializeComponent();
             this.DataContext = new CalculadoraViewModel();
         }
+        
+
+        public void ObtenerNombres()
+        {
+
+        }
     }
 }
