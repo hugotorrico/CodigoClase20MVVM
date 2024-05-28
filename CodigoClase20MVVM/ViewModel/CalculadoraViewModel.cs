@@ -121,7 +121,7 @@ namespace CodigoClase20MVVM.ViewModel
 
         public void Sumar()
         {           
-            Resultado = Valor1 + Valor2;
+            Resultado = Convert.ToInt32( Valor1) + Convert.ToInt32( Valor2);
         }
 
         public void Restar()
