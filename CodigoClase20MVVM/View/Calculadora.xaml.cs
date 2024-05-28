@@ -18,6 +18,7 @@ namespace CodigoClase20MVVM.View
     /// <summary>
     /// Lógica de interacción para Calculadora.xaml
     /// </summary>
+    /// hola
     public partial class Calculadora : Window
     {
         ///Sergio Vallle
