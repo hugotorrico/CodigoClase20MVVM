@@ -96,7 +96,7 @@ namespace CodigoClase20MVVM.ViewModel
 
         #endregion
 
-
+        //
         public CalculadoraViewModel()
         {
 
