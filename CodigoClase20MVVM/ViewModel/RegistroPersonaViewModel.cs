@@ -9,5 +9,7 @@ namespace CodigoClase20MVVM.ViewModel
 {
     public class RegistroPersonaViewModel :ViewModelBase
     {
+
+        //
     }
 }
